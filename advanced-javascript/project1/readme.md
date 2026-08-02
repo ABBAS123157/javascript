@@ -166,8 +166,8 @@ ba color changeing
             5. tic-tac-toe game
 
             <!DOCTYPE html>
-<html lang="en">
-<head>
+        <html lang="en">
+        <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tic-tac-toe game</title>
@@ -260,7 +260,7 @@ ba color changeing
             width: 150px;
             border-radius: 18px;
             color: #111;
-            box-shadow: inset 0 -6px 12px rgba(130, 22, 22, 0.08), 0 20px 35px rgba(135, 59, 59, 0.18);
+            box-shadow: inset 0 -6px 12px rgba(130, 22, 22, 0.08), 0 20px 35px rgba(135,                 59, 59, 0.18);
             transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
             transform-style: preserve-3d;
             cursor: pointer;
@@ -281,12 +281,12 @@ ba color changeing
             transform: translateY(-12px) rotateX(8deg) rotateY(8deg);
         }
            @keyframes winGlow {
-            from { box-shadow: 0 0 28px rgba(255,151,62,0.45), 0 20px 40px rgba(0,0,0,0.25); }
+            from { box-shadow: 0 0 28px rgba(255,151,62,0.45), 0 20px 40px                         rgba(0,0,0,0.25); }
             to { box-shadow: 0 0 48px rgba(255,255,255,0.9), 0 26px 50px rgba(0,0,0,0.28); }
         }
-    </style>
-</head>
-<body>
+            </style>
+        </head>
+        <body>
      <nav>
         <div class="nav">
             <h1>My first js project</h1>

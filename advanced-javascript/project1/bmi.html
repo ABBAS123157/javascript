@@ -95,7 +95,7 @@
 
 
     <script>
-const form = document.querySelector("form")
+        const form = document.querySelector("form")
         const btn = document.querySelector(".btn")
 
 
@@ -106,10 +106,10 @@ const form = document.querySelector("form")
             const result = document.querySelector(".result")
             if (isNaN(height) || height < 0 || height === '') {
                 result.innerHTML = `please give a valid height in a number ${height}`;
-            }else if(isNaN(weight) || weight < 0 || weight === ''){
+            } else if (isNaN(weight) || weight < 0 || weight === '') {
                 result.innerHTML = `please give a valid weight in a number ${weight}`;
-            }else {
-                const bmi = (weight / ((height * height)/10000)).toFixed(2);
+            } else {
+                const bmi = (weight / ((height * height) / 10000)).toFixed(2);
                 result.innerHTML = `<span>${bmi} </span>`
             }
 

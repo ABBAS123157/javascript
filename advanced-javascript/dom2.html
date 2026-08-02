@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createelement</title>
+</head>
+<body>
+    <div class="list">
+        <ul>
+            <li>javascript</li>
+ 
+        </ul>
+    </div>
+    <script>
+        const list = document.querySelector(".list");
+        // const items = list.querySelector("li");
+        function createElement(){
+            const newelement = document.createElement("li");
+            // newelement.textContent = document.querySelector("li").textContent;
+            newelement.appendChild(document.createTextNode("express js"));
+            newelement.appendChild(document.createTextNode("node js"));
+            list.appendChild(newelement);
+        }
+        createElement("express js");
+    </script>
+</body>
+</html>

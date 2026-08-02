@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM modules</title>
+</head>
+<body>
+    <div class="list">
+        <ul>
+            <li>javascript</li>
+            <li>javascript</li>
+            <li>javascript</li>
+        </ul>
+    </div>
+
+    <script>
+        const list = document.querySelector('.list')
+        console.log(list)
+        const items = list.querySelectorAll('li')
+        // console.log(items.target())
+        if (items.length > 0) {
+            items.forEach(item => {
+                item.textContent = 'javascript is awesome'
+                const news = document.querySelector('li:first-child')
+                news.style.color = 'red'
+            })
+        }
+        console.log(items)
+    </script>
+</body>
+</html>

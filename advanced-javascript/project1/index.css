@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(90deg, rgba(148, 230, 233, 0.601)50%, rgba(25, 49, 49, 0.563)100%);
+    background: linear-gradient(190deg, rgba(148, 230, 233, 0.601)50%, rgba(106, 138, 138, 0.563)100%);
     color: aliceblue;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -43,7 +43,7 @@ h1{
     text-decoration: none;
     position: relative;
 }
-a::after{
+.nav a::after{
     content: "";
     height: 3px ;
     width: 0%;
@@ -53,7 +53,7 @@ a::after{
     bottom: -5px;
    transition-duration: 0.98s;
 }
-a:hover::after{
+.nav a:hover::after{
     width: 100%;
     transform:  scaleX(1.9s);
 }
@@ -160,13 +160,6 @@ ul li {
         text-decoration: none;
         font-weight: 600;
     }
-
-
-
-
-
-
-
 
 
 

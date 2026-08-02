@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .content {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .border {
+            /* border: 1px solid black; */
+            padding: 10px 20px;
+            border-radius: 10px;
+            background: #d5d1d16b;
+            box-shadow: 0px 0px 30px black;
+
+        }
+
+        .head h1 {
+            font-size: 30px;
+            padding: 10px 0px;
+            font-weight: 800;
+        }
+
+        .head p {
+            font-size: 25px;
+        }
+
+        form {
+            display: grid;
+            justify-content: center;
+            /* border: 1px solid gray; */
+            width: fit-content;
+            margin: 30px auto;
+            padding: 10px 20px;
+            gap: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 30px black;
+        }
+
+        form label {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        form input {
+            padding: 10px 20px;
+            font-size: 25px;
+            outline: none;
+            border-radius: 20px;
+            border: none;
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.558);
+        }
+
+        form button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav">
+            <h1>My first js project</h1>
+            <li><a href="#">Home</a></li>
+            <li><a href="https://youtube.com">you tube</a></li>
+            <li><a href="readme.md">See code</a></li>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="border">
+            <div class="head">
+                <h1>Bmi generator</h1>
+                <p>check the your height and weight in bmi generator</p>
+                <form>
+                    <label>Bmi generator</label>
+                    <input type="text" id="height" placeholder="Enter the height" required>
+                    <input type="text" id="weight" placeholder="Enter the weight" required>
+                    <button class="btn">Calculate</button>
+                    <span class="result"></span>
+                    <p>grator then: <span first>under the : 18</span></p>
+                    <p>Average the number :10</p>
+                    <p>less then : <span class="last">More high : 20</span></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+const form = document.querySelector("form")
+        const btn = document.querySelector(".btn")
+
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const height = parseInt(document.querySelector("#height").value)
+            const weight = parseInt(document.querySelector("#weight").value)
+            const result = document.querySelector(".result")
+            if (isNaN(height) || height < 0 || height === '') {
+                result.innerHTML = `please give a valid height in a number ${height}`;
+            }else if(isNaN(weight) || weight < 0 || weight === ''){
+                result.innerHTML = `please give a valid weight in a number ${weight}`;
+            }else {
+                const bmi = (weight / ((height * height)/10000)).toFixed(2);
+                result.innerHTML = `<span>${bmi} </span>`
+            }
+
+        })
+    </script>
+</body>
+
+</html>

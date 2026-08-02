@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bg-color</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        h1{
+            display: flex;
+            justify-content: center;
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        span{
+            height: 120px;
+            width: 120px;
+            border: 1px solid black;
+            border-radius: 10px;
+            background: #fff;
+        }
+        .clo{
+            background: #000;
+        }
+        .clo1{
+            background: #9d4b4b;
+        }
+        .clo2{
+            background: #17d120;
+        }
+        .clo3{
+            background: #eee171;
+        }
+        .clo4{
+            background: #47b9d8;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav">
+            <h1>My first js project</h1>
+            <li><a href="#">Home</a></li>
+            <li><a href="https://youtube.com">you tube</a></li>
+            <li><a href="readme.md">See code</a></li>
+        </div>
+    </nav>
+        <h1>click the box and change the background color</h1>
+        <div class="box">
+            <span class="box" id="white"></span>
+            <span class="box clo" id="black"></span>
+            <span class="box clo1" id="brown"></span>
+            <span class="box clo2" id="green"></span>
+            <span class="box clo3" id="yellow"></span>
+            <span class="box clo4" id="blue"></span>
+        </div>
+    <pre class="log"></pre>
+
+    <script>
+        const boxes = document.querySelectorAll(".box");
+        const log = document.querySelector(".log")
+        console.log(boxes);
+        boxes.forEach((button)=>{
+            button.addEventListener("click", (e)=>{
+                e.preventDefault();
+                // console.log(e)
+                console.log(e.target)
+                if(e.target.id === 'white'){
+                    document.body.style.background = e.target.id
+                    log.innerHTML = "You clicked the white color"
+                     document.body.style.color = "black"
+                }
+                if(e.target.id === 'black'){
+                    document.body.style.background = e.target.id
+                    log.innerHTML = "You clicked the black color"
+                    document.body.style.color = "white"
+                }
+                if(e.target.id === 'brown'){
+                    document.body.style.background = e.target.id
+                    log.innerHTML = "You clicked the brown color"
+                }
+                if(e.target.id === 'green'){
+                    document.body.style.background = e.target.id
+                    log.innerHTML = "You clicked the green color"
+                }
+                if(e.target.id === 'yellow'){
+                    document.body.style.background = e.target.id
+                    log.innerHTML = "You clicked the yellow color"
+                    document.body.style.color = "black"
+                }
+                if(e.target.id === 'blue'){
+                    document.body.style.background = e.target.id
+                    log.innerHTML = "You clicked the blue color"
+                    document.body.style.color = "white"
+                }
+                
+                
+
+            })
+        })
+        
+    </script>
+</body>
+</html>

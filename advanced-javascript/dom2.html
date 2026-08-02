@@ -18,11 +18,17 @@
         function createElement(){
             const newelement = document.createElement("li");
             // newelement.textContent = document.querySelector("li").textContent;
+            // newelement.appendChild(document.createTextNode("express js"));
             newelement.appendChild(document.createTextNode("express js"));
-            newelement.appendChild(document.createTextNode("node js"));
             list.appendChild(newelement);
+            console.log(newelement);
         }
-        createElement("express js");
-    </script>
+        createElement("node js");
+        createElement("angular js");
+        createElement("react js");
+ 
+     
+    
+     </script>
 </body>
 </html>

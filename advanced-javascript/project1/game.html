@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+
+    <style>
+        .content {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .border {
+            /* border: 1px solid black; */
+            padding: 10px 20px;
+            border-radius: 10px;
+            background: #d5d1d16b;
+            box-shadow: 0px 0px 30px black;
+
+        }
+
+        .head h1 {
+            font-size: 30px;
+            padding: 10px 0px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+
+        form {
+            display: grid;
+            justify-content: center;
+            /* border: 1px solid gray; */
+            width: fit-content;
+            margin: 30px auto;
+            padding: 10px 20px;
+            gap: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 30px black;
+        }
+
+        form label {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        form input {
+            padding: 10px 20px;
+            font-size: 25px;
+            outline: none;
+            border-radius: 20px;
+            border: none;
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.558);
+        }
+
+        form button:active {
+            transform: scale(0.98);
+        }
+        form p{
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav">
+            <h1>My first js project</h1>
+            <li><a href="#">Home</a></li>
+            <li><a href="https://youtube.com">you tube</a></li>
+            <li><a href="readme.md">See code</a></li>
+        </div>
+    </nav>
+        <div class="content">
+            <div class="border">
+                <div class="head">
+                    <h1>Number guessing game</h1>
+                    <form>
+                        <p>Try and guess a random number between 1 to 100.</p>
+                        <p>you have 10 attempts to guess the right number</p>
+                        <label>Guess a number</label>
+                        <input type="text" placeholder="Enter and guess a number" id="guess" required>
+                        <button class="btn">Submit guess</button>
+                        <div class="restult"> 
+                        <p>Previous Guessess : <span class="prev"></span></p>
+                        <p>Guesses Remaining : <span class="remining">10</span></p>
+                        <p class="loworhi"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            const form = document.querySelector("form")
+            const userinput = document.querySelector("#guess")
+            const btn = document.querySelector(".btn")
+            const prev = document.querySelector(".prev")
+            const remaing = document.querySelector(".remining")
+            const loworhi = document.querySelector(".loworhi")
+            const result = document.querySelector(".restult")
+            const randomnumber = Math.floor(Math.random() * 100 + 1);
+            console.log(randomnumber)
+
+            let arr = []
+            let game = true
+            let attempt = 1;
+
+            if(game){
+                btn.addEventListener("click", (e)=>{
+                    e.preventDefault();
+                    const guess = parseInt(userinput.value)
+                    console.log(guess);
+                    Display(guess)
+                })
+            }
+            function Display (guess) {
+                if(isNaN(guess)){
+                    alert("please enter the valid number is NAN")
+                
+                }else if(guess < 1){
+                    alert("please enter the valid number yoy enter less then 1")
+                }else if(guess > 100){
+                    alert("please enter the valid number is not more then 100 ")
+                }else {
+                    arr.push(guess)
+                    if(attempt > 10){
+                        DisplayMessage(guess);
+                        DisplayMessage(`Game over. Random number was ${randomnumber}`)
+                        endgame();
+                    }else{
+                        Displayguess(guess);
+                        DisplayCheck(guess)
+                    }
+                }
+
+            }
+            function DisplayCheck (guess) {
+                if(guess === randomnumber){
+                   DisplayMessage("Congraluation! you guessed corret number.")
+                   endgame();
+                }
+                else if(guess > randomnumber){
+                    DisplayMessage("Hey! you enter the grater then 100")
+                }
+                else if(guess < randomnumber){
+                    DisplayMessage("Hey! you enter the less then 100")
+                }
+            }
+            function Displayguess (guess){
+                userinput.value = '';
+                prev.innerHTML += `${guess},`;
+                attempt++;
+                remaing.innerHTML = `${10 - attempt}`
+            }
+            function DisplayMessage (message) {
+                loworhi.innerHTML = `<span>${message}</span>`
+            }
+            function endgame () {
+                userinput.value = ''
+                userinput.setAttribute("disabled", '')
+                const p = document.createElement("button")
+                p.innerHTML = `<h2 id = "newgame">Start new game </h2>`
+                p.style.color = "white"
+                result.appendChild(p)
+                game = false
+                restartgame()
+            }
+            function restartgame () {
+
+            }
+         </script>
+</body>
+
+</html>
